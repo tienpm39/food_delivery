@@ -1,0 +1,25 @@
+version: "3"
+services:
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: example
+    ports:
+      - 3306:3306
+#
+#  server:
+#    build:
+#      context: .
+#      dockerfile: ./Dockerfile
+#    volumes:
+#      - .:/app
+#    ports:
+#      - 8000:8000
+#    environment:
+#      SERVER_HOST: 0.0.0.0
+#      SERVER_PORT: 8000
+#      DSN: "root:example@tcp(127.0.0.1:3306)/example?charset=utf8mb4&parseTime=True&loc=Local"
+#    command: sleep infinity
